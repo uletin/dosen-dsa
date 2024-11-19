@@ -13,7 +13,7 @@ const addPasien = (text) => {
 };
 
 const removePasien = () => {
-  texts.shift();
+  texts.pop();
 };
 
 const inputQuestion = () => {
