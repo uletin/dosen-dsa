@@ -1,5 +1,4 @@
 const readline = require("readline");
-
 const input = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -12,23 +11,20 @@ const addItem = (item) => {
 };
 
 const removeItem = () => {
-  items.shift();
+  items.pop();
 };
 
 const inputQuestion = () => {
-  console.log("Pasien di lobby", items);
+  console.log("Barang Di Dalam Truck", items);
 
   input.question(
-    "Pilih Fitur : \n 1. Tambah Pasien \n 2. Panggil Pasien \n 3. Keluar Aplikasi \n Pilih Nomor Berapa : ",
+    "Pilih Fitur : \n 1. Tambah Barang \n 2. Ambil Barang \n 3. Keluar Aplikasi \n Pilih Nomor Berapa : ",
     (answer) => {
       if (answer === "1") {
-        input.question("Masukkan Nama Pasien : ", (item) => {
+        input.question("Masukkan Nama Barang : ", (item) => {
           addItem(item);
           inputQuestion();
         });
-      } else if (answer === "2") {
-        removeItem();
-        inputQuestion();
       }
     }
   );
